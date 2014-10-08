@@ -1,6 +1,7 @@
 (***************************
  * Assignment #1
  * Author: Juan Burgos
+ *
  ***************************)
 
 
@@ -117,7 +118,7 @@ fun dates_in_month(dates : (int * int * int) list, month : int) =
                       else []
         in
           if null(tl dd) then found
-          else found @ dates_in_month_nonempty(tl dd)
+          else found :: dates_in_month_nonempty(tl dd)
         end
     in
       dates_in_month_nonempty(dates)
