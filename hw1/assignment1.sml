@@ -388,7 +388,8 @@ fun number_in_months_challenge( dates : (int * int * int) list,
  *      input months.
  *
  *)
-fun dates_in_months_challenge(dates : (int * int * int) list, months : int list) =
+fun dates_in_months_challenge(dates : (int * int * int) list, 
+                              months : int list) =
   if null(months) then []
   else dates_in_months(dates, duplicate_free_copy(months))
 
