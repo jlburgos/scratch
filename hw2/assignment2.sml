@@ -34,7 +34,7 @@ fun get_substitutions1(sll : string list list, s : string) =
                       case sl' of
                            NONE => get_substitutions1(sll',s)
                          | SOME v => v @ get_substitutions1(sll',s)
-                    end
+                      end
 (*************************************************)
 fun get_substitutions2(sll : string list list, s : string) =
   let

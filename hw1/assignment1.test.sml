@@ -37,6 +37,7 @@ val test10b = month_range(29,32) = [1,1,1,2]
 val test11b = oldest([(2011,2,28),(2011,1,28),(2011,4,28)]) = SOME (2011,1,28)
 
 (* Testing the Challenge Problems *)
+
 val test12a1 = number_in_months([(2012,2,28),(2013,12,1),
                               (2011,3,31),(3011,4,28)],[2,3,3,3,4]) = 5
 val test12a2 = number_in_months_challenge([(2012,2,28),(2013,12,1),

@@ -51,16 +51,16 @@ fun number_in_month(dates : (int * int * int) list, month : int) =
   if null(dates) then 0
   else
     let
-      fun number_in_months_nonempty(dd : (int * int * int) list) =
+      fun collect_dates(dd : (int * int * int) list) =
         let
-          val found = if ((#2 (hd dd))=month) then 1
-                      else 0
+          val test = if ((#2 (hd dd))=month) then 1
+                     else 0
         in
-          if null(tl dd) then found
-          else found + number_in_months_nonempty(tl dd)
+          if null(tl dd) then test
+          else test + collect_dates(tl dd)
         end
     in
-      number_in_months_nonempty(dates)
+      collect_dates(dates)
     end
 (*************************************************)
 
@@ -83,12 +83,12 @@ fun number_in_months(dates : (int * int * int) list, months : int list) =
   if null(dates) orelse null(months) then 0
   else
     let
-      fun number_in_months_nonempty(mm : int list) =
+      fun collect_dates(mm : int list) =
         if null(tl mm) then number_in_month(dates, (hd mm))
         else
-          number_in_month(dates, (hd mm)) + number_in_months_nonempty(tl mm)
+          number_in_month(dates, (hd mm)) + collect_dates(tl mm)
     in
-      number_in_months_nonempty(months)
+      collect_dates(months)
     end
 (*************************************************)
 
