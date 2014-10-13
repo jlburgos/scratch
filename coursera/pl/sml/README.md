@@ -1,1 +1,1 @@
-Personal scratch repo containing pet projects and toy code.
+Coursework for Programming Languages on Coursera.
